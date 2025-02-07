@@ -27,6 +27,7 @@ function kiir(asd){
         let doboz=document.createElement('div');
         doboz.className='doboz';
         doboz.innerHTML=`
+        <img src="${asd[i].image}" alt=""> 
         <h2>${asd[i].name}</h2>
         <p>${asd[i].description}</p>
         <p id="ar">${asd[i].price}</p>
