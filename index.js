@@ -1,5 +1,5 @@
 let adat = [];
-
+let rendeles=[];
 function sz(){
     fetch('menu.json')
     .then(response => response.json())
@@ -31,9 +31,15 @@ function kiir(asd){
         <h2>${asd[i].name}</h2>
         <p>${asd[i].description}</p>
         <p id="ar">${asd[i].price}</p>
-        <button>Rendelés</button>
+        <button onclick="r_hozad(${String(asd[i].name)}">Rendelés</button>
         `;
         hely.appendChild(doboz);
     } 
 }
+
+function r_hozad(asd){
+    rendeles.append(String(asd));
+    console.log(rendeles);
+}
+
 sz();
