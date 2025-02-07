@@ -25,7 +25,7 @@ function kiir(asd){
     let hely = document.getElementById('kimenet');
     for(let i = 0; i<asd.length;i++){
         let doboz=document.createElement('div');
-        doboz.class='doboz';
+        doboz.className='doboz';
         doboz.innerHTML=`
         <h2>${asd[i].name}</h2>
         <p>${asd[i].description}</p>
