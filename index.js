@@ -1,4 +1,3 @@
-
 let adat = [];
 
 function sz(){
@@ -23,7 +22,7 @@ function render(asd) {
 }
 
 function kiir(asd){
-    let hely = document.getElementById('szar');
+    let hely = document.getElementById('kimenet');
     for(let i = 0; i<asd.length;i++){
         let doboz=document.createElement('div');
         doboz.class='doboz';
