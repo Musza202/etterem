@@ -30,9 +30,15 @@ function kiir(asd){
         <img src="${asd[i].image}" alt=""> 
         <h2>${asd[i].name}</h2>
         <p>${asd[i].description}</p>
-        <p id="ar">${asd[i].price}</p>
-        <button onclick="r_hozad(${String(asd[i].name)}">Rendelés</button>
+        <p id="ar">${asd[i].price} Ft</p>
         `;
+        let gomb = document.createElement("button");
+        gomb.textContent="Rendelés";
+        gomb.addEventListener('click',x=>{
+            rendeles.push(String(asd[i].name));
+            alert(`A ${asd[i].name} hozzáadtuk a rendelésedhez!`);
+        })
+        doboz.appendChild(gomb);
         hely.appendChild(doboz);
     } 
 }
