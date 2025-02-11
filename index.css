@@ -119,6 +119,7 @@ body {
     border-radius: 8px;
     font-size: 1rem;
     cursor: pointer;
+    margin-bottom: 10px;
   }
   
   button:hover {
@@ -143,4 +144,13 @@ body {
     border-radius: 10px;
     border: 4px solid yellow;
     height: 225px;
+  }
+  #kosar{
+    display: none;
+    padding: 10px;
+    background-color: rgb(255, 255, 255,.65);
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 400px;
+    
   }
