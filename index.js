@@ -67,7 +67,21 @@ function kosar_fris(){
     ki.innerHTML="";
     szamlalo=0;
     rendeles.forEach(element => {
-        if(element.darab!=0)ki.innerHTML+=`${element.name} : x${element.darab}</br>`;
+        if(element.darab!=0){
+           ki.innerHTML+=`${element.name} : x${element.darab}`;
+            let gomb = document.createElement("button");
+            gomb.textContent="Törlés";
+            gomb.addEventListener('click',x=>{
+                for(let i =0;i<rendeles.length;i++){
+                    if(rendeles[i].name==element.name){
+                        rendeles[i].darab--;
+                        kosar_fris();
+                    }
+                }
+            })
+            ki.appendChild(gomb);
+            ki.appendChild(document.createElement("br"));
+        }
         else szamlalo++;
     });
     console.log(szamlalo);
