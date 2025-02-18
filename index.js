@@ -32,7 +32,7 @@ function kiir(asd){
         <p>${asd[i].description}</p>
         <p id="ar">${asd[i].price} Ft</p>
         `;
-        rendeles.push({name:asd[i].name,darab:0});
+        rendeles.push({name:asd[i].name,darab:0,price:asd[i].price});
         let gomb = document.createElement("button");
         gomb.textContent="Rendelés";
         gomb.addEventListener('click',x=>{
@@ -68,8 +68,11 @@ function kosar_fris(){
     szamlalo=0;
     rendeles.forEach(element => {
         if(element.darab!=0){
-           ki.innerHTML+=`${element.name} : x${element.darab}`;
-            let gomb = document.createElement("button");
+           let span = document.createElement("span");
+           span.innerHTML=`${element.name} : x${element.darab}`;
+           ki.appendChild(span); 
+           let gomb = document.createElement("button");
+            gomb.style.margin="15px";
             gomb.textContent="Törlés";
             gomb.addEventListener('click',x=>{
                 for(let i =0;i<rendeles.length;i++){
@@ -86,5 +89,17 @@ function kosar_fris(){
     });
     console.log(szamlalo);
     if(szamlalo==20)ki.innerHTML="Üres Kosarad!";
+    else{
+        let oszeg = document.createElement("div");
+        let sz = 0;
+        rendeles.forEach(x => {
+            if(x.darab !=0){
+                sz+=x.darab*x.price;
+                console.log(x.darab,x.price);
+            }
+        });
+        oszeg.innerHTML=`Összesen: ${sz}Ft`;
+        ki.appendChild(oszeg);
+    }
 }
 sz();
